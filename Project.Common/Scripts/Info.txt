@@ -1,0 +1,10 @@
+﻿To build model run @ nuget console:
+Scaffold-DbContext -Force "Server=DESKTOP-C7R2P8A;Database=ProjectDB;user id=sa;password=a;" "Microsoft.EntityFrameworkCore.SqlServer" -OutputDir "../Project.Domain/Models" -ContextDir "../Project.Domain/Models"
+
+At package manager console
+
+System.Configuration.ConfigurationManager
+for configuration
+
+Create interface:
+Ctrl + R, Ctrl + I

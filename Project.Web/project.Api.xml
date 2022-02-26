@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Project.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Project.Controllers.AuthenticationController">
+            <summary>
+            Authentication controller
+            </summary>
+        </member>
+        <member name="M:Project.Controllers.AuthenticationController.#ctor(Project.Domain.Services.IUserService,Project.Common.Services.AuthenticationService,Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            
+            </summary>
+            <param name="userService"></param>
+            <param name="authenticationService"></param>
+            <param name="memoryCache"></param>
+        </member>
+        <member name="M:Project.Controllers.AuthenticationController.HeartBeat">
+            <summary>
+            Log out
+            </summary>
+            <returns></returns>
+            <remarks>
+            GET /api/Authentication/HeartBeat
+            </remarks>
+            <response code="200"></response> 
+        </member>
+        <member name="M:Project.Controllers.AuthenticationController.LogIn(System.String,System.String,System.Boolean)">
+            <summary>
+            Get log in information
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="workTimeEntry"></param>
+            <returns>User information</returns>
+            <remarks>
+            GET /api/Authentication/LogIn/{username}{password}
+            </remarks>
+            <response code="200">Return logged user information</response>
+        </member>
+        <member name="M:Project.Controllers.AuthenticationController.LogOut(System.Boolean)">
+            <summary>
+            Log out
+            </summary>
+            <returns></returns>
+            <remarks>
+            GET /api/Authentication/LogOut
+            </remarks>
+            <response code="200"></response> 
+        </member>
+        <member name="T:Project.Controllers.BaseController">
+            <summary>
+            Base for all controllers
+            </summary>
+        </member>
+        <member name="T:Project.Program">
+            <summary>
+            Main program!
+            </summary>
+        </member>
+        <member name="M:Project.Program.Main(System.String[])">
+            <summary>
+            We start hosting here
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Project.Program.BuildWebHost(System.String[])">
+            <summary>
+            Build web host
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Project.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="P:Project.Startup.ApplicationContainer">
+            <summary>
+            Application container
+            </summary>
+        </member>
+        <member name="M:Project.Startup.#ctor(Microsoft.Extensions.Hosting.IHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup for back end
+            </summary>
+            <param name="environment"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Project.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Services are configured here
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Project.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure app
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:project.Web.Swagger.OperationIdOperationFilter">
+            <summary>
+            OperationId Swagger Operation Filter
+            </summary>
+        </member>
+        <member name="M:project.Web.Swagger.OperationIdOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Apply
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:project.Web.Swagger.ResponseTypeOperationFilter">
+            <summary>
+            ResponseTyp Swagger Operation Filter
+            </summary>
+        </member>
+        <member name="M:project.Web.Swagger.ResponseTypeOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Apply
+            </summary>
+            <param name="operation"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:project.Web.Swagger.SwaggerGenHelper">
+            <summary>
+            Swagger generator helper
+            </summary>
+        </member>
+        <member name="M:project.Web.Swagger.SwaggerGenHelper.SetSwaggerGenOptions">
+            <summary>
+            Set Swagger generation options
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:project.Web.Swagger.ApiExplorerGroupPerVersionConvention">
+            <summary>
+            ApiExplorer Convention for Swagger
+            </summary>
+        </member>
+        <member name="M:project.Web.Swagger.ApiExplorerGroupPerVersionConvention.Apply(Microsoft.AspNetCore.Mvc.ApplicationModels.ControllerModel)">
+            <summary>
+            Apply (Autorun)
+            </summary>
+            <param name="controller"></param>
+        </member>
+        <member name="T:project.Hubs.ProjectHub">
+            <summary>
+            Fish portal hub
+            </summary>
+        </member>
+        <member name="M:project.Hubs.ProjectHub.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{project.Hubs.ProjectHub},Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.Extensions.Options.IOptions{Project.Api.ProjectCommonOptions})">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="memoryCache"></param>
+            <param name="projectCommonOptions"></param>
+        </member>
+        <member name="M:project.Hubs.ProjectHub.OnConnectedAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:project.Hubs.ProjectHub.OnDisconnectedAsync(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="ex"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

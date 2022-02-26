@@ -1,0 +1,79 @@
+[Table("SecurityRolePermission")]
+    public class SecurityRolePermission
+    {
+        #region Instance Properties
+
+        public int ID { get; set; }
+
+        public int SecurityPermissionID { get; set; }
+
+        public int SecurityRoleID { get; set; }
+
+        public DateTime CTS { get; set; }
+
+        public int CID { get; set; }
+
+        public bool Deleted { get; set; }
+
+        public DateTime? DTS { get; set; }
+
+        public int? DID { get; set; }
+
+        #endregion Instance Properties
+    }
+
+  [Table("SecurityPermission")]
+    public class SecurityPermission
+    {
+        #region Instance Properties
+
+        public int ID { get; set; }
+
+        public string Code { get; set; }
+
+        #endregion Instance Properties
+    }
+
+ [Table("SecurityRole")]
+    public class SecurityRole
+    {
+
+        public SecurityRole()
+        {
+            this.Permissions = new List<string>();
+        }
+
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
+
+        public string Code { get; set; }
+
+        public string DictionaryKey { get; set; }
+
+        [NotMapped]
+        public List<string> Permissions { get; set; }
+
+        public List<UserCompanySecurityRole> UserCompanySecurityRoles { get; set; }
+
+        public List<CompanyAPIKeySecurityRole> CompanyAPIKeySecurityRoles { get; set; }
+
+        #region IModel
+        [JsonIgnore]
+        public DateTime CTS { get; set; }
+        [JsonIgnore]
+        public int CID { get; set; }
+        [JsonIgnore]
+        public DateTime UTS { get; set; }
+        [JsonIgnore]
+        public int UID { get; set; }
+        [JsonIgnore]
+        public bool Deleted { get; set; }
+        [JsonIgnore]
+        public DateTime? DTS { get; set; }
+        [JsonIgnore]
+        public int? DID { get; set; }
+        [NotMapped]
+        public string UUID { get; set; }
+        #endregion IModel
+    }

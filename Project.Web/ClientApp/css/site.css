@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+html, body {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#app {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../Icons/MaterialIcons-Regular.woff2) format('woff2');
+}

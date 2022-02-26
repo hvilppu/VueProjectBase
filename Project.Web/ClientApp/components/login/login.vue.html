@@ -1,0 +1,39 @@
+<template>
+    <div v-if="pageLoaded">
+
+        <div v-if="!auth">
+            <h2 class="project-blue">{{ $t("LOG_IN") }}</h2>
+        </div>
+        <div v-else>
+            <h2 class="project-blue">{{ $t("LOG_OUT") }}</h2>
+        </div>
+
+        <div>
+            <div v-if="!auth">
+                <v-text-field :label="$t('USERNAME')" append-icon="person" v-model="userName" outlined dense @keydown.enter="login"></v-text-field>
+                <v-text-field :label="$t('PASSWORD')" append-icon="lock" v-model="passWord" type="password" outlined dense @keydown.enter="login"></v-text-field>
+                <v-btn class="project-button huge lightblue" v-on:click="login">{{ $t("LOG_IN") }}</v-btn>
+            </div>
+            <div v-else>
+                <v-btn class="project-button huge lightblue" v-on:click="unAuthenticate">{{ $t("LOG_OUT") }}</v-btn>
+            </div>
+        </div>
+
+        <div v-if="userNamePassWordInvalid">
+            <br />
+            <p><v-icon>warning</v-icon>{{ $t("WRONG_USERNAME_PASSWORD") }}</p>
+        </div>
+
+    </div>
+
+    <div v-else="!logging">
+        <v-progress-circular indeterminate :size="200" :width="10" class="project-blue">{{ $t("LOADING_SITE") }}</v-progress-circular>
+    </div>
+
+    <div v-else>
+        <v-progress-circular indeterminate :size="200" :width="10" class="project-blue">{{ $t("LOGGING_IN") }}</v-progress-circular>
+    </div>
+
+</template>
+
+<script src="./login.ts"></script>
